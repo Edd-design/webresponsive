@@ -1,10 +1,19 @@
+#fancy{
+	border-radius:0.3em;
+	display:block;	
+	margin:1em auto;
+	padding:0.3em;
+	width:30%;
+}
+
 .caja{
 	align-items:center;
-	border:solid;
 	box-shadow:0 0 0.5em #000;
 	display:flex;
 	height:400px;
 	justify-content:space-around;
+	margin:0 auto;
+	width:80%;
 }
 .caja div{
 	height:250px;
@@ -23,3 +32,48 @@
 .cajitas3 img{
 	max-width:100%;
 }
+@media print{
+	.caja{
+		box-shadow:none;
+	}
+	#fancy, .cajitas1, .cajitas2{
+		display:none;
+	}
+	.caja .cajitas3{
+		width:80%;
+	}
+}
+@keyframes edd{
+	0%{
+		background: tomato;
+	}
+	20%{
+		background: gold;
+	}
+	60%{
+		background: lightpink;
+	}
+	80%{
+		background: darkblue;
+	}
+	100%{
+		background: chocolate;
+	}
+}
+@media screen and (max-width:550px){
+	#fanc{width:100%;}
+	.caja{
+		flex-direction:column-reverse;
+		height: auto;	
+		width:100%;
+	}
+	.caja div{
+		width: 100%;
+	}
+
+	.caja .cajitas2{
+		animation:edd infinite 5s alternate;
+	}
+
+}
+
